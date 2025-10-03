@@ -23,13 +23,3 @@ cd accessible-vite-react-boilerplate
 npm install
 npm run dev
 ```
-
-## Folder Structure
-src/
-├── components/   # Reusable UI components
-├── hooks/        # Custom hooks
-├── pages/        # App pages
-├── styles/       # SCSS & design tokens
-├── utils/        # Utilities
-├── App.jsx       # Main App
-└── main.jsx      # Vite entry point
