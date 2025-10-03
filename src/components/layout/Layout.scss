@@ -7,12 +7,10 @@
 
   &.light {
     background-color: $color-background-light;
-    color: $color-text-primary-light;
   }
 
   &.dark {
     background-color: $color-background-dark;
-    color: $color-text-primary-dark;
   }
 
   &-header {
@@ -20,6 +18,7 @@
     place-content: space-between;
 
     &__brand {
+      color: $white;
       align-content: center;
     }
   }
@@ -29,6 +28,7 @@
     padding: $spacing-md;
     background-color: $color-surface-dark;
     font-weight: bold;
+    color: $white;
 
     div {
       text-align: center;
