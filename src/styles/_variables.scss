@@ -1,0 +1,44 @@
+// Light Theme Colors
+$color-primary-light: #1E3A8A;
+$color-primary-hover-light: #162B6C;
+$color-secondary-light: #F59E0B;
+$color-accent-light: #EF4444;
+$color-background-light: #F9FAFB;
+$color-surface-light: #FFFFFF;
+$color-text-primary-light: #111827;
+$color-text-secondary-light: #6B7280;
+$color-success-light: #10B981;
+$color-info-light: #3B82F6;
+$color-warning-light: #FBBF24;
+$color-error-light: #EF4444;
+
+// Dark Theme Colors
+$color-primary-dark: #60A5FA;           // Light blue variant
+$color-primary-hover-dark: #3B82F6;     // Stronger blue
+$color-secondary-dark: #FBBF24;         // Slightly warmer amber
+$color-accent-dark: #F87171;            // Softer red
+$color-background-dark: #111827;        // True dark background
+$color-surface-dark: #1F2937;           // Elevated card-style surface
+$color-text-primary-dark: #F9FAFB;      // Near-white text
+$color-text-secondary-dark: #9CA3AF;    // Muted gray
+$color-success-dark: #6EE7B7;           // Muted green
+$color-info-dark: #93C5FD;              // Muted blue
+$color-warning-dark: #FCD34D;           // Muted yellow
+$color-error-dark: #FCA5A5;             // Muted red
+
+// Shared Typography
+$font-family-base: 'Inter', sans-serif;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+
+// Shared Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+
+// Shared Borders
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;

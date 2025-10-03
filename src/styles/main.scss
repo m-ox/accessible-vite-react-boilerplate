@@ -1,0 +1,57 @@
+@use './variables' as *;
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-md;
+  margin: 0;
+  padding: 0;
+}
+
+.light {
+  background-color: $color-background-light;
+  color: $color-text-primary-light;
+
+  .button {
+    background-color: $color-primary-light;
+    color: $color-surface-light;
+
+    &:hover {
+      background-color: $color-primary-hover-light;
+    }
+  }
+
+  .card {
+    background-color: $color-surface-light;
+  }
+}
+
+.dark {
+  background-color: $color-background-dark;
+  color: $color-text-primary-dark;
+
+  .button {
+    background-color: $color-primary-dark;
+    color: $color-surface-dark;
+
+    &:hover {
+      background-color: $color-primary-hover-dark;
+    }
+  }
+
+  .card {
+    background-color: $color-surface-dark;
+  }
+}
+
+.button {
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-md;
+  border: none;
+  cursor: pointer;
+}
+
+.card {
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,16 @@
+@import '../styles/variables';
+
+.toggle-button {
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-md;
+  border: 1px solid $color-primary;
+  background-color: transparent;
+  color: $color-primary;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &[data-state="on"] {
+    background-color: $color-primary;
+    color: $color-surface-light;
+  }
+}

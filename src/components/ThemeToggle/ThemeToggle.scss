@@ -1,0 +1,39 @@
+@use '../../styles/variables' as *;
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-sm;
+  border: 1px solid;
+  border-radius: $border-radius-lg;
+  cursor: pointer;
+  font: inherit;
+  background: transparent;
+  transition: background-color 0.2s, color 0.2s;
+
+  &__icon {
+    font-size: 1.2em;
+  }
+
+  .light & {
+    color: $color-text-primary-light;
+    border-color: $color-primary-light;
+
+    &:hover {
+      background-color: $color-primary-hover-light;
+      color: $color-surface-light;
+    }
+  }
+
+  .dark & {
+    color: $color-text-primary-dark;
+    border-color: $color-primary-dark;
+
+    &:hover {
+      background-color: $color-primary-hover-dark;
+      color: $color-surface-dark;
+    }
+  }
+}
