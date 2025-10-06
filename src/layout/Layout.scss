@@ -1,11 +1,11 @@
-@use '../../styles/variables' as *;
+@use '../styles/variables' as *;
 
 .layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
-  // Radix-based light/dark targeting
+  // Let the page background still change with theme
   [data-theme='light'] & {
     background-color: $color-background-light;
   }
@@ -14,22 +14,16 @@
     background-color: $color-background-dark;
   }
 
+  // Header and footer: fixed, not theme-aware
   &-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: $spacing-md;
     font-weight: bold;
+
+    background-color: $color-surface-dark;
     color: $white;
-
-    [data-theme='light'] & {
-      background-color: $color-surface-light;
-      color: $color-text-primary-light;
-    }
-
-    [data-theme='dark'] & {
-      background-color: $color-surface-dark;
-      color: $color-text-primary-dark;
-    }
 
     &__brand {
       align-content: center;
@@ -41,15 +35,8 @@
     text-align: center;
     font-weight: bold;
 
-    [data-theme='light'] & {
-      background-color: $color-surface-light;
-      color: $color-text-primary-light;
-    }
-
-    [data-theme='dark'] & {
-      background-color: $color-surface-dark;
-      color: $color-text-primary-dark;
-    }
+    background-color: $color-surface-dark;
+    color: $white;
   }
 
   &-content {
