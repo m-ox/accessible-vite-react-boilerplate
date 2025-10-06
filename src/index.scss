@@ -1,8 +1,11 @@
-/* Base variable sheet (no CSS emitted, just definitions) */
+/* Variable definitions (no output) */
 @use './styles/variables' as *;
 
 /* Global base styles */
 @import './styles/main.scss';
+
+/* Radix base styles — keep before overrides */
+@import "@radix-ui/themes/styles.css";
 
 /* Component styles */
 @import './components/Button/Button.scss';
@@ -10,3 +13,6 @@
 
 /* Layout */
 @import './layout/Layout.scss';
+
+/* Radix bridge — LAST so it overrides everything */
+@import './styles/radix-theme-bridge.scss';

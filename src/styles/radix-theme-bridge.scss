@@ -1,0 +1,63 @@
+@use './variables' as *;
+
+/* Light Mode Overrides */
+.radix-themes[data-theme='light'] {
+  /* Indigo palette (your primary) */
+  --indigo-1: #{$color-background-light};
+  --indigo-2: #{$color-secondary-light};
+  --indigo-3: #{$color-secondary-light};
+  --indigo-4: #{$color-primary-hover-light};
+  --indigo-5: #{$color-primary-hover-light};
+  --indigo-6: #{$color-primary-hover-light};
+  --indigo-7: #{$color-primary-light};
+  --indigo-8: #{$color-primary-light};
+  --indigo-9: #{$color-primary-light};
+  --indigo-10: #{$color-primary-hover-light};
+  --indigo-11: #{$color-primary-hover-light};
+  --indigo-12: #{$color-text-primary-light};
+
+  /* Gray palette (surface/background/text neutrals) */
+  --gray-1: #{$color-background-light};
+  --gray-2: #{$color-surface-light};
+  --gray-3: #{$color-secondary-light};
+  --gray-4: #{$color-secondary-light};
+  --gray-5: #{$color-secondary-light};
+  --gray-6: #{$color-secondary-light};
+  --gray-7: #{$color-secondary-light};
+  --gray-8: #{$color-secondary-light};
+  --gray-9: #{$color-text-secondary-light};
+  --gray-10: #{$color-text-secondary-light};
+  --gray-11: #{$color-text-primary-light};
+  --gray-12: #{$color-text-primary-light};
+}
+
+/* Dark Mode Overrides */
+.radix-themes[data-theme='dark'] {
+  /* Indigo palette (your primary) */
+  --indigo-1: #{$color-background-dark};
+  --indigo-2: #{$color-surface-dark};
+  --indigo-3: #{$color-surface-dark};
+  --indigo-4: #{$color-primary-hover-dark};
+  --indigo-5: #{$color-primary-hover-dark};
+  --indigo-6: #{$color-primary-hover-dark};
+  --indigo-7: #{$color-primary-dark};
+  --indigo-8: #{$color-primary-dark};
+  --indigo-9: #{$color-primary-dark};
+  --indigo-10: #{$color-primary-hover-dark};
+  --indigo-11: #{$color-primary-hover-dark};
+  --indigo-12: #{$color-text-primary-dark};
+
+  /* Gray palette (surface/background/text neutrals) */
+  --gray-1: #{$color-background-dark};
+  --gray-2: #{$color-surface-dark};
+  --gray-3: #{$color-secondary-dark};
+  --gray-4: #{$color-secondary-dark};
+  --gray-5: #{$color-secondary-dark};
+  --gray-6: #{$color-secondary-dark};
+  --gray-7: #{$color-secondary-dark};
+  --gray-8: #{$color-secondary-dark};
+  --gray-9: #{$color-text-secondary-dark};
+  --gray-10: #{$color-text-secondary-dark};
+  --gray-11: #{$color-text-primary-dark};
+  --gray-12: #{$color-text-primary-dark};
+}
