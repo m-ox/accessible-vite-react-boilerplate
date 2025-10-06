@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  // Radix-based light/dark targeting
+  [data-theme='light'] & {
+    background-color: $color-background-light;
+  }
+
+  [data-theme='dark'] & {
+    background-color: $color-background-dark;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-md;
+    font-weight: bold;
+    color: $white;
+
+    [data-theme='light'] & {
+      background-color: $color-surface-light;
+      color: $color-text-primary-light;
+    }
+
+    [data-theme='dark'] & {
+      background-color: $color-surface-dark;
+      color: $color-text-primary-dark;
+    }
+
+    &__brand {
+      align-content: center;
+    }
+  }
+
+  &-footer {
+    padding: $spacing-md;
+    text-align: center;
+    font-weight: bold;
+
+    [data-theme='light'] & {
+      background-color: $color-surface-light;
+      color: $color-text-primary-light;
+    }
+
+    [data-theme='dark'] & {
+      background-color: $color-surface-dark;
+      color: $color-text-primary-dark;
+    }
+  }
+
+  &-content {
+    flex: 1;
+    padding: $spacing-lg;
+  }
+}

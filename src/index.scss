@@ -1,0 +1,12 @@
+/* Base variable sheet (no CSS emitted, just definitions) */
+@use './styles/variables' as *;
+
+/* Global base styles */
+@import './styles/main.scss';
+
+/* Component styles */
+@import './components/Button/Button.scss';
+@import './components/ThemeToggle/ThemeToggle.scss';
+
+/* Layout */
+@import './layout/Layout.scss';
