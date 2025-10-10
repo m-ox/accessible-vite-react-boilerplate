@@ -1,0 +1,40 @@
+@use "../../styles/variables" as *;
+
+.form-status-badge {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: $border-radius-sm;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: $color-text-primary-light;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  [data-theme="dark"] & {
+    // background-color: rgba(255, 255, 255, 0.1);
+    color: $color-text-primary-dark;
+  }
+
+  &--ready {
+    color: #e0f7fa;
+    background: #00796b;
+  }
+
+  &--incomplete {
+    color: #fff3e0;
+    background: #ef6c00;
+  }
+
+  &--submitted {
+    color: #e3f2fd;
+    background: #1565c0;
+  }
+
+  &--accepted {
+    color: #e8f5e9;
+    background: #2e7d32;
+  }
+}

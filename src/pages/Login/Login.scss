@@ -1,0 +1,160 @@
+@use "sass:color";
+@use "../../styles/variables" as *;
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 1rem;
+
+  &__card {
+    background-color: $color-surface-light;
+    color: $color-text-primary-light;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius-lg;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 2.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    [data-theme="dark"] & {
+      background-color: $color-surface-dark;
+      color: $color-text-primary-dark;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    color: $color-primary-light;
+    margin-bottom: 1rem;
+
+    [data-theme="dark"] & {
+      color: $color-primary-dark;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  &__subtitle {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-bottom: 1.5rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  &__input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: $border-radius-md;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary-light;
+      box-shadow: 0 0 0 2px rgba($color-primary-light, 0.25);
+    }
+
+    [data-theme="dark"] & {
+      background: rgba(255, 255, 255, 0.05);
+      color: $color-text-primary-dark;
+      border-color: rgba(255, 255, 255, 0.2);
+
+      &:focus {
+        border-color: $color-primary-dark;
+        box-shadow: 0 0 0 2px rgba($color-primary-dark, 0.25);
+      }
+    }
+  }
+
+  &__btn {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &--primary {
+      background-color: $color-primary-light;
+      color: $color-surface-light;
+
+      &:hover {
+        background-color: color.scale($color-primary-light, $lightness: -10%);
+      }
+
+      [data-theme="dark"] & {
+        background-color: $color-primary-dark;
+        color: $color-surface-dark;
+
+        &:hover {
+          background-color: color.scale($color-primary-dark, $lightness: 10%);
+        }
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    &--okta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      background-color: #007dc1;
+      color: white;
+      font-weight: 600;
+
+      &:hover {
+        background-color: color.scale(#007dc1, $lightness: -10%);
+      }
+    }
+  }
+
+  &__divider {
+    margin: 1.5rem 0;
+    position: relative;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+
+    span {
+      background: inherit;
+      padding: 0 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.1);
+
+      [data-theme="dark"] & {
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+}

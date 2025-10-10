@@ -1,0 +1,154 @@
+@use "../../styles/variables" as *;
+
+.dashboard {
+  padding: $spacing-md $spacing-xs;
+
+  /* ===== Header Row ===== */
+  &__header-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__header-left {
+    flex: 1 1 50%;
+  }
+
+  &__header-right {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: $color-text-secondary-light;
+
+    [data-theme="dark"] & {
+      color: $color-text-secondary-dark;
+    }
+  }
+
+  &__refresh-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__last-updated {
+    margin: 0;
+    font-weight: 500;
+    opacity: 0.85;
+    white-space: nowrap;
+  }
+
+  &__refresh-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.2s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &:active {
+      transform: rotate(180deg);
+    }
+
+    [data-theme="dark"] & {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+    }
+  }
+
+  &__refresh-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__header {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* ===== Stats & Sections ===== */
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__section {
+    padding: $spacing-md $spacing-lg;
+    border-radius: $border-radius-md;
+    border: 1px solid;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    [data-theme="light"] & {
+      background-color: $color-surface-light;
+      border-color: $color-secondary-light;
+      color: $color-text-primary-light;
+    }
+
+    [data-theme="dark"] & {
+      background-color: $color-surface-dark;
+      border-color: $color-secondary-dark;
+      color: $color-text-primary-dark;
+    }
+
+    h2 {
+      margin-bottom: $spacing-sm;
+      font-size: 1.25rem;
+    }
+
+    p {
+      margin-bottom: $spacing-sm;
+      font-size: $font-size-md;
+      opacity: 0.9;
+    }
+  }
+
+  /* ===== Dashboard-only Links ===== */
+  &__link {
+    display: inline-block;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: $border-radius-sm;
+    padding: $spacing-xs $spacing-md;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    /* Scoped theme behavior */
+    [data-theme="light"] & {
+      color: $color-primary-light;
+      border-color: $color-primary-light;
+
+      &:hover {
+        background-color: $color-primary-light;
+        color: $color-surface-light;
+      }
+    }
+
+    [data-theme="dark"] & {
+      color: $color-primary-dark;
+      border-color: $color-primary-dark;
+
+      &:hover {
+        background-color: $color-primary-dark;
+        color: $color-surface-dark;
+      }
+    }
+  }
+}

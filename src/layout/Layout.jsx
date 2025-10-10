@@ -1,22 +1,17 @@
-import { useTheme } from '../context/ThemeContext';
-import { ThemeToggle } from '../components/ThemeToggle/ThemeToggle';
-import './Layout.scss';
+import { useTheme } from "../context/ThemeContext";
+import Navbar from "../components/Navbar/Navbar";
+import "./Layout.scss";
 
-export const Layout = ({ children }) => {
-  const { theme, toggleTheme } = useTheme();
+export default function Layout({ children }) {
+  const { theme } = useTheme();
 
   return (
     <div className={`layout ${theme}`}>
-      <header className="layout-header">
-        <div className="layout-header__brand">My App</div>
-        <div className="layout-header__controls">
-          <ThemeToggle />
-        </div>
-      </header>
-
+      <Navbar />
       <main className="layout-content">{children}</main>
-
-      <footer className="layout-footer"><div>© {new Date().getFullYear()}</div></footer>
+      <footer className="layout-footer">
+        <div>© {new Date().getFullYear()}</div>
+      </footer>
     </div>
   );
-};
+}

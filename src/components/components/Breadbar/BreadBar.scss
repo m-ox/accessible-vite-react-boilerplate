@@ -1,0 +1,50 @@
+@use "../../styles/variables" as *;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  margin: $spacing-md 0rem;
+
+  [data-theme="light"] & {
+    color: $color-text-secondary-light;
+  }
+
+  [data-theme="dark"] & {
+    color: $color-text-secondary-dark;
+  }
+
+  .breadcrumb-link {
+    text-decoration: none;
+
+    [data-theme="light"] & {
+      color: $color-primary-light;
+    }
+
+    [data-theme="dark"] & {
+      color: $color-primary-dark;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumb-current {
+    font-weight: bold;
+
+    [data-theme="light"] & {
+      color: $color-text-primary-light;
+    }
+
+    [data-theme="dark"] & {
+      color: $color-text-primary-dark;
+    }
+  }
+
+  .breadcrumb-separator {
+    opacity: 0.6;
+  }
+}

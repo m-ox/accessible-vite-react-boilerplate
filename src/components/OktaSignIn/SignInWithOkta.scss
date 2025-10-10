@@ -1,0 +1,94 @@
+@use "../../styles/variables" as *;
+
+.okta-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+
+  &__card {
+    background-color: $color-surface-light;
+    color: $color-text-primary-light;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius-lg;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 2.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    [data-theme="dark"] & {
+      background-color: $color-surface-dark;
+      color: $color-text-primary-dark;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-primary-light;
+
+    [data-theme="dark"] & {
+      color: $color-primary-dark;
+    }
+
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+  }
+
+  &__subtitle {
+    font-size: 0.95rem;
+    opacity: 0.75;
+    margin-bottom: 2rem;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: $border-radius-md;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    width: 100%;
+
+    [data-theme="light"] & {
+      background-color: $color-primary-light;
+      color: $color-surface-light;
+
+      &:hover {
+        background-color: color.scale($color-primary-light, $lightness: -10%);
+      }
+    }
+
+    [data-theme="dark"] & {
+      background-color: $color-primary-dark;
+      color: $color-surface-dark;
+
+      &:hover {
+        background-color: color.scale($color-primary-dark, $lightness: 10%);
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__okta-logo {
+    flex-shrink: 0;
+  }
+}
