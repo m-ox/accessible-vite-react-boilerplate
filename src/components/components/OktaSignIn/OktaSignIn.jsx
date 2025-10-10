@@ -20,7 +20,7 @@ export default function SignInWithOkta() {
         </div>
         <h1 className="okta-signin__title">Sign in to your account</h1>
         <p className="okta-signin__subtitle">
-          Access your forms, batches, and dashboards securely.
+          Access your dashboard securely.
         </p>
 
         <button

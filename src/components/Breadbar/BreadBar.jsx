@@ -1,82 +1,48 @@
 import React, { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useStore } from "../../store/useStore";
 import "./BreadBar.scss";
 
+/**
+ * Generic breadcrumb bar that converts the current pathname into navigable links.
+ * Example: /dashboard/forms/view/123 → Dashboard / Forms / View / 123
+ */
 export default function BreadBar() {
-  const location = useLocation();
-  const { pathname } = location;
-  const { formBatches } = useStore();
+  const { pathname } = useLocation();
 
   const breadcrumbs = useMemo(() => {
     const segments = pathname.split("/").filter(Boolean);
-    const items = [];
+    if (segments.length === 0) return [];
 
-    // Always include Dashboard first
-    items.push(
-      <Link key="dashboard" to="/dashboard" className="breadcrumb-link">
-        Dashboard
-      </Link>
-    );
-
-    if (segments.length === 0) return items;
-
-    // Detect context when viewing a specific form
-    const isViewingForm = segments.includes("view");
-    let formContext = "pending"; // default fallback
-
-    if (isViewingForm) {
-      const currentId = segments[segments.length - 1];
-      const foundForm = formBatches.find((b) => b.id === currentId);
-      if (foundForm?.status === "completed") formContext = "completed";
-      else if (foundForm?.status === "pending") formContext = "pending";
-    } else {
-      // Fallback to URL check if not viewing a form
-      formContext = pathname.includes("/forms/completed")
-        ? "completed"
-        : "pending";
-    }
-
-    // Build breadcrumbs
-    segments.forEach((segment, i) => {
+    return segments.map((segment, i) => {
+      const href = "/" + segments.slice(0, i + 1).join("/");
       const isLast = i === segments.length - 1;
 
-      // Skip base "forms" segment
-      if (segment.toLowerCase() === "forms") return;
-
-      let href = "/" + segments.slice(0, i + 1).join("/");
-
-      // Special handling for "view"
-      if (segment === "view") href = `/forms/${formContext}`;
-
-      // Display labels cleanly
       const label = decodeURIComponent(segment)
         .replace(/-/g, " ")
         .replace(/\b\w/g, (c) => c.toUpperCase());
 
-      if (isLast) {
-        items.push(
-          <span key={`crumb-${href}`} className="breadcrumb-current">
-            {label}
-          </span>
-        );
-      } else {
-        items.push(
-          <Link key={`crumb-${href}`} to={href} className="breadcrumb-link">
-            {label === "View" ? "Forms" : label}
-          </Link>
-        );
-      }
+      return isLast ? (
+        <span key={href} className="breadcrumb-current">
+          {label}
+        </span>
+      ) : (
+        <Link key={href} to={href} className="breadcrumb-link">
+          {label}
+        </Link>
+      );
     });
+  }, [pathname]);
 
-    return items;
-  }, [pathname, formBatches]);
-
-  // Hide breadcrumbs on dashboard or root
-  if (pathname === "/dashboard" || pathname === "/") return null;
+  // Hide breadcrumbs on root
+  if (pathname === "/" || pathname === "/dashboard") return null;
 
   return (
     <nav className="breadcrumbs" aria-label="breadcrumb">
+      {/* Always include Dashboard as first link */}
+      <Link to="/dashboard" className="breadcrumb-link">
+        Dashboard
+      </Link>
+      {breadcrumbs.length > 0 && <span className="breadcrumb-separator">/</span>}
       {breadcrumbs.map((item, i) => (
         <React.Fragment key={i}>
           {item}

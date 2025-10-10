@@ -1,7 +1,6 @@
-import React from "react";
-import "./FormStatusBadge.scss";
+import "./StatusBadge.scss";
 
-export default function FormStatusBadge({ status = "ready" }) {
+export default function StatusBadge({ status = "ready" }) {
   const normalized = status.toLowerCase();
 
   const validStatuses = ["ready", "incomplete", "submitted", "accepted"];
@@ -11,7 +10,7 @@ export default function FormStatusBadge({ status = "ready" }) {
 
   return (
     <span
-      className={`form-status-badge form-status-badge--${safeStatus}`}
+      className={`status-badge status-badge--${safeStatus}`}
       data-status={safeStatus}
     >
       {safeStatus}

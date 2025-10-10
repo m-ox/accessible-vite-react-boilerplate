@@ -35,7 +35,7 @@ export default function Login() {
       <div className="login__card">
         <LockClosedIcon className="login__icon" />
         <h1 className="login__title">Sign In</h1>
-        <p className="login__subtitle">Access your forms and dashboard securely</p>
+        <p className="login__subtitle">Access your dashboard securely</p>
 
         <form onSubmit={handleSubmit} className="login__form">
           <input
