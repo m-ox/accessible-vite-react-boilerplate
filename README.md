@@ -18,7 +18,7 @@ A **fast, accessible React starter** using Vite, SCSS, and a flexible component-
 ## Quick Start
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/m-ox/accessible-vite-react-boilerplate.git
 cd accessible-vite-react-boilerplate
 npm install
 npm run dev
